@@ -1969,7 +1969,7 @@ function Get-Parameter {
          @{n="ParameterSet";e={$paramset}},
          @{n="Command";e={$command}},
          @{n="Mandatory";e={$_.IsMandatory}},
-         @{n="Provider";e={$_.DynamicProvider}},
+         @{n="Provider";e={try {$_.DynamicProvider}} catch {$null}},
          @{n="ValueFromPipeline";e={$_.ValueFromPipeline}},
          @{n="ValueFromPipelineByPropertyName";e={$_.ValueFromPipelineByPropertyName}}
       )
